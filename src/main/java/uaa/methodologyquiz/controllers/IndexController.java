@@ -2,6 +2,7 @@ package uaa.methodologyquiz.controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 /**
@@ -19,6 +20,10 @@ public class IndexController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
+    @FXML
+    private void testPrint(){
+        System.out.println("Hola bombon");
+    }
     
 }

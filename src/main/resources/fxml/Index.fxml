@@ -7,12 +7,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="uaa.methodologyquiz.controllers.IndexController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uaa.methodologyquiz.controllers.IndexController">
     <stylesheets>
         <URL value="@/styles/index.css" />
     </stylesheets>
    <children>
-      <Button layoutX="158.0" layoutY="66.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="268.0" text="Iniciar" AnchorPane.leftAnchor="128.0" AnchorPane.rightAnchor="128.0" AnchorPane.topAnchor="128.0">
+      <Button layoutX="158.0" layoutY="66.0" mnemonicParsing="false" onAction="#testPrint" opacity="0.7" prefHeight="95.0" prefWidth="268.0" style="-fx-background-color: green;" text="Iniciar" textFill="#ae0c0c" AnchorPane.leftAnchor="128.0" AnchorPane.rightAnchor="128.0" AnchorPane.topAnchor="128.0">
          <tooltip>
             <Tooltip text="Iniciar test sobre que metodo manejar">
                <font>
