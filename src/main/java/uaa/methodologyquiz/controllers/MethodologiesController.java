@@ -13,7 +13,7 @@ import uaa.methodologyquiz.enums.FxmlEnum;
  *
  * @author root
  */
-public class IndexController implements Initializable {
+public class MethodologiesController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -23,16 +23,10 @@ public class IndexController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }
-
-    @FXML
-    private void startQuiz() throws IOException {
-        MainApp.changeScene(FxmlEnum.QUIZ);
-    }
+    }    
     
     @FXML
-    private void seeMethodologies() throws IOException {
-        MainApp.changeScene(FxmlEnum.METHODOLOGIES);
+    private void backToIndex() throws IOException {
+        MainApp.changeScene(FxmlEnum.INDEX);
     }
-    
 }
