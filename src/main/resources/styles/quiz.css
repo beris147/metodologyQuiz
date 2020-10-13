@@ -1,7 +1,8 @@
-/*
- * Empty Stylesheet file.
- */
-
 .mainFxmlClass {
+    
+}
 
+.question-button {
+    -fx-font-size: 12px;
+    -fx-pref-width: 200px;
 }
