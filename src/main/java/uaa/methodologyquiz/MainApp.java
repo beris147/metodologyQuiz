@@ -1,17 +1,12 @@
 package uaa.methodologyquiz;
 
 import java.io.IOException;
-import static java.lang.System.exit;
 import java.util.Arrays;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.json.JSONArray;
-import static uaa.methodologyquiz.datagen.GenFunctions.binarySearchJSONArray;
-import static uaa.methodologyquiz.datagen.GenFunctions.getJSONFromFile;
-import uaa.methodologyquiz.enums.DataFilesEnum;
 import uaa.methodologyquiz.enums.FxmlEnum;
 
 public class MainApp extends Application {
