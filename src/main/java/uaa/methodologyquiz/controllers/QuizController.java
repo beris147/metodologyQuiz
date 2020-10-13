@@ -74,13 +74,21 @@ public class QuizController implements Initializable {
         this.questionSentence.setText(currentQuestion.getSentence());
         this.questionTitle.setText(currentQuestion.getTitle());
         this.optionsBox.getChildren().clear();
+        ToggleGroup group = new ToggleGroup();
         currentQuestion
             .getOptions()
-            .stream()
+            .stream() 
             .forEachOrdered(
                 (Option option) -> {
                     RadioButton radioOption = 
                             new RadioButton(option.getSentence());
+                    radioOption.setToggleGroup(group);
+                    if(currentQuestion.getAnswer() == option){
+                        radioOption.setSelected(true);
+                    }
+                    radioOption.setOnAction(
+                        (ActionEvent e) -> currentQuestion.setAnswer(option)
+                    );
                     this.optionsBox.getChildren().add(radioOption);
                 }
             );

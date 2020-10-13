@@ -15,6 +15,7 @@ public class Question {
     private Option answer;
 
     public Question() {
+        this.answer = null;
     }
     
     public Question(JSONObject json) {
@@ -27,12 +28,14 @@ public class Question {
             Option option = new Option(optionJSON);
             options.add(option);
         }
+        this.answer = null;
     }
 
     public Question(String title, String sentence, ArrayList<Option> options) {
         this.title = title;
         this.sentence = sentence;
         this.options = options;
+        this.answer = null;
     }
 
     public String getTitle() {
