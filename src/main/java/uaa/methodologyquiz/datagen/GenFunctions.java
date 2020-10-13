@@ -35,7 +35,7 @@ public class GenFunctions {
         JSONArray jsonArray, String value
     ){
         int l = -1, r = jsonArray.length();
-        while(l < r) {
+        while(r-l > 1) {
             int m = (l+r)/2;
             JSONObject candidate = jsonArray.getJSONObject(m);
             if(candidate.has(value)){
