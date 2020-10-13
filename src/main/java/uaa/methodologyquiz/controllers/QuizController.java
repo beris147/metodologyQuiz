@@ -2,20 +2,16 @@ package uaa.methodologyquiz.controllers;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import java.util.*;
+import javafx.collections.*;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Control;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.RadioButton;
+import javafx.fxml.*;
+import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import uaa.methodologyquiz.MainApp;
-import uaa.methodologyquiz.enums.FxmlEnum;
+import uaa.methodologyquiz.classes.*;
+import uaa.methodologyquiz.enums.*;
+import uaa.methodologyquiz.functions.*;
 
 /**
  * FXML Controller class
@@ -25,7 +21,7 @@ import uaa.methodologyquiz.enums.FxmlEnum;
 public class QuizController implements Initializable {
 
    
-     @FXML
+    @FXML
     private Button btnQ1;
 
     @FXML
@@ -76,8 +72,11 @@ public class QuizController implements Initializable {
     @FXML
     private Text labelQuestion;
 
-    private int numberQuestion;
-
+    private int questionNumber;
+    
+    private final ArrayList<Question> questions;
+    private final ArrayList<Methodology> methodologies;
+    
     /**
      * Initializes the controller class.
      *
@@ -86,24 +85,32 @@ public class QuizController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-
-        ObservableList<String> items = FXCollections.observableArrayList(
-                "Codificar", "Cascada", "Scrum", "Prototipado");
-        listViewMethodologies.setItems(items);
+        ObservableList<String> methodologiesNames = MethodologiesFunctions
+                .getMethodologiesNames(this.methodologies);
+        listViewMethodologies.setItems(methodologiesNames);
         setQuestion(1);
+        System.out.println(questions.size());
+    }
+    
+    public QuizController(
+        ArrayList<Question> questions,
+        ArrayList<Methodology> methodologies
+    ) {
+        this.questions = questions;
+        this.methodologies = methodologies;
     }
 
     @FXML
     private void backToIndex() throws IOException {
         MainApp.changeScene(FxmlEnum.INDEX);
     }
+    
 
     @FXML
     void handleButtonAction(ActionEvent event) {
-        System.out.println("Hola");
-
-        switch (((Control) event.getSource()).getId()) {
+        Control source = (Control) event.getSource();
+        String buttonId = source.getId();
+        switch (buttonId) {
             case "btnQ1":
                 setQuestion(1);
                 break;
@@ -139,13 +146,12 @@ public class QuizController implements Initializable {
     }
 
     private void setQuestion(int question) {
-        numberQuestion = question;
+        questionNumber = question;
         labelQuestion.setText("Pregunta " + question);
         b1.setText("Opcion 1,pregunta" + question);
         b2.setText("Opcion 2,pregunta" + question);
         b3.setText("Opcion 3,pregunta" + question);
         b4.setText("Opcion 4,pregunta" + question);
-
     }
 
     @FXML
@@ -155,18 +161,18 @@ public class QuizController implements Initializable {
 
     @FXML
     void backQuestion(ActionEvent event) {
-        if (numberQuestion > 1) {
-            numberQuestion--;
-            setQuestion(numberQuestion);
+        if (questionNumber > 1) {
+            questionNumber--;
+            setQuestion(questionNumber);
         }
 
     }
 
     @FXML
     void nextQuestion(ActionEvent event) {
-        if (numberQuestion < 10) {
-            numberQuestion++;
-            setQuestion(numberQuestion);
+        if (questionNumber < 10) {
+            questionNumber++;
+            setQuestion(questionNumber);
         }
     }
     

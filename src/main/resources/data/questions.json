@@ -1,0 +1,14 @@
+{
+    "questions" : [
+        {"sentence":"Esta es mi pregunta","options":[{"sentence":"opcion 1","methodologies":["AM","ASD","AUP"]},{"sentence":"opcion 2","methodologies":["CAF","DAD","ESP"]},{"sentence":"opcion 3","methodologies":["XP","ZAVE"]}],"title":"Pregunta 1"},
+        {"sentence":"Esta es mi pregunta","options":[{"sentence":"opcion 1","methodologies":["AM","ASD","AUP"]},{"sentence":"opcion 2","methodologies":["CAF","DAD","ESP"]},{"sentence":"opcion 3","methodologies":["XP","ZAVE"]}],"title":"Pregunta 2"},
+        {"sentence":"Esta es mi pregunta","options":[{"sentence":"opcion 1","methodologies":["AM","ASD","AUP"]},{"sentence":"opcion 2","methodologies":["CAF","DAD","ESP"]},{"sentence":"opcion 3","methodologies":["XP","ZAVE"]}],"title":"Pregunta 3"},
+        {"sentence":"Esta es mi pregunta","options":[{"sentence":"opcion 1","methodologies":["AM","ASD","AUP"]},{"sentence":"opcion 2","methodologies":["CAF","DAD","ESP"]},{"sentence":"opcion 3","methodologies":["XP","ZAVE"]}],"title":"Pregunta 4"},
+        {"sentence":"Esta es mi pregunta","options":[{"sentence":"opcion 1","methodologies":["AM","ASD","AUP"]},{"sentence":"opcion 2","methodologies":["CAF","DAD","ESP"]},{"sentence":"opcion 3","methodologies":["XP","ZAVE"]}],"title":"Pregunta 5"},
+        {"sentence":"Esta es mi pregunta","options":[{"sentence":"opcion 1","methodologies":["AM","ASD","AUP"]},{"sentence":"opcion 2","methodologies":["CAF","DAD","ESP"]},{"sentence":"opcion 3","methodologies":["XP","ZAVE"]}],"title":"Pregunta 6"},
+        {"sentence":"Esta es mi pregunta","options":[{"sentence":"opcion 1","methodologies":["AM","ASD","AUP"]},{"sentence":"opcion 2","methodologies":["CAF","DAD","ESP"]},{"sentence":"opcion 3","methodologies":["XP","ZAVE"]}],"title":"Pregunta 7"},
+        {"sentence":"Esta es mi pregunta","options":[{"sentence":"opcion 1","methodologies":["AM","ASD","AUP"]},{"sentence":"opcion 2","methodologies":["CAF","DAD","ESP"]},{"sentence":"opcion 3","methodologies":["XP","ZAVE"]}],"title":"Pregunta 8"},
+        {"sentence":"Esta es mi pregunta","options":[{"sentence":"opcion 1","methodologies":["AM","ASD","AUP"]},{"sentence":"opcion 2","methodologies":["CAF","DAD","ESP"]},{"sentence":"opcion 3","methodologies":["XP","ZAVE"]}],"title":"Pregunta 9"},
+        {"sentence":"Esta es mi pregunta","options":[{"sentence":"opcion 1","methodologies":["AM","ASD","AUP"]},{"sentence":"opcion 2","methodologies":["CAF","DAD","ESP"]},{"sentence":"opcion 3","methodologies":["XP","ZAVE"]}],"title":"Pregunta 10"}
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "methodologies" : [
+        {"AM":{"features":[{"sentence":"1c"},{"sentence":"2c"},{"sentence":"3c"}],"advantages":[{"sentence":"1v"},{"sentence":"2v"}],"disadvantages":[{"sentence":"1d"},{"sentence":"2d"},{"sentence":"3d"}],"name":"METHOD","description":"IT'S A BEAUTIFUL METHOD","usages":[{"sentence":"1u"},{"sentence":"2u"}]}},
+        {"ASD":{"features":[{"sentence":"1c"},{"sentence":"2c"},{"sentence":"3c"}],"advantages":[{"sentence":"1v"},{"sentence":"2v"}],"disadvantages":[{"sentence":"1d"},{"sentence":"2d"},{"sentence":"3d"}],"name":"METHOD","description":"IT'S A BEAUTIFUL METHOD","usages":[{"sentence":"1u"},{"sentence":"2u"}]}},
+        {"AUP":{"features":[{"sentence":"1c"},{"sentence":"2c"},{"sentence":"3c"}],"advantages":[{"sentence":"1v"},{"sentence":"2v"}],"disadvantages":[{"sentence":"1d"},{"sentence":"2d"},{"sentence":"3d"}],"name":"METHOD","description":"IT'S A BEAUTIFUL METHOD","usages":[{"sentence":"1u"},{"sentence":"2u"}]}},
+        {"CAF":{"features":[{"sentence":"1c"},{"sentence":"2c"},{"sentence":"3c"}],"advantages":[{"sentence":"1v"},{"sentence":"2v"}],"disadvantages":[{"sentence":"1d"},{"sentence":"2d"},{"sentence":"3d"}],"name":"METHOD","description":"IT'S A BEAUTIFUL METHOD","usages":[{"sentence":"1u"},{"sentence":"2u"}]}},
+        {"DAD":{"features":[{"sentence":"1c"},{"sentence":"2c"},{"sentence":"3c"}],"advantages":[{"sentence":"1v"},{"sentence":"2v"}],"disadvantages":[{"sentence":"1d"},{"sentence":"2d"},{"sentence":"3d"}],"name":"METHOD","description":"IT'S A BEAUTIFUL METHOD","usages":[{"sentence":"1u"},{"sentence":"2u"}]}},
+        {"ESP":{"features":[{"sentence":"1c"},{"sentence":"2c"},{"sentence":"3c"}],"advantages":[{"sentence":"1v"},{"sentence":"2v"}],"disadvantages":[{"sentence":"1d"},{"sentence":"2d"},{"sentence":"3d"}],"name":"METHOD","description":"IT'S A BEAUTIFUL METHOD","usages":[{"sentence":"1u"},{"sentence":"2u"}]}},
+        {"XP":{"features":[{"sentence":"1c"},{"sentence":"2c"},{"sentence":"3c"}],"advantages":[{"sentence":"1v"},{"sentence":"2v"}],"disadvantages":[{"sentence":"1d"},{"sentence":"2d"},{"sentence":"3d"}],"name":"METHOD","description":"IT'S A BEAUTIFUL METHOD","usages":[{"sentence":"1u"},{"sentence":"2u"}]}},
+        {"ZAVE":{"features":[{"sentence":"1c"},{"sentence":"2c"},{"sentence":"3c"}],"advantages":[{"sentence":"1v"},{"sentence":"2v"}],"disadvantages":[{"sentence":"1d"},{"sentence":"2d"},{"sentence":"3d"}],"name":"METHOD","description":"IT'S A BEAUTIFUL METHOD","usages":[{"sentence":"1u"},{"sentence":"2u"}]}}
+    ]
+}

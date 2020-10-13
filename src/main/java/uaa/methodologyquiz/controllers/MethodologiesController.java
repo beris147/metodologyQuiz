@@ -2,11 +2,11 @@ package uaa.methodologyquiz.controllers;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import java.util.*;
+import javafx.fxml.*;
 import uaa.methodologyquiz.MainApp;
-import uaa.methodologyquiz.enums.FxmlEnum;
+import uaa.methodologyquiz.classes.*;
+import uaa.methodologyquiz.enums.*;
 
 /**
  * FXML Controller class
@@ -20,10 +20,16 @@ public class MethodologiesController implements Initializable {
      * @param url
      * @param rb
      */
+    
+    private final ArrayList<Methodology> methodologies;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+    }
+    
+    public MethodologiesController(ArrayList<Methodology> methodologies) {
+        this.methodologies = methodologies;
+    }
     
     @FXML
     private void backToIndex() throws IOException {
