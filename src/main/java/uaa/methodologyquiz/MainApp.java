@@ -1,17 +1,23 @@
 package uaa.methodologyquiz;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import uaa.methodologyquiz.classes.Methodology;
+import static uaa.methodologyquiz.datagen.MethodologyGenerator.generateAllMethodologies;
+import static uaa.methodologyquiz.datagen.MethodologyGenerator.generateMethodologies;
 import uaa.methodologyquiz.enums.FxmlEnum;
+import uaa.methodologyquiz.enums.MethodologiesEnum;
 
 public class MainApp extends Application {
     
     private static Stage stage;
+    public static ArrayList<Methodology> MethodologiesToShow;
     
     @Override
     public void start(Stage stage) throws Exception {

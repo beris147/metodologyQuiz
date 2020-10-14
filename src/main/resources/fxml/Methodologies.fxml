@@ -34,7 +34,7 @@
             </ScrollPane>
          </children>
       </HBox>
-      <Button layoutX="18.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToIndex" styleClass="btn-color" text="Regresar" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="14.0">
+      <Button layoutX="18.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToIndex" styleClass="btn-color" text="Inicio" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="14.0">
          <font>
             <Font size="16.0" />
          </font>

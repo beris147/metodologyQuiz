@@ -6,10 +6,9 @@ import java.util.*;
 import java.util.concurrent.Callable;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import uaa.methodologyquiz.classes.*;
+import uaa.methodologyquiz.MainApp;
 import uaa.methodologyquiz.controllers.*;
 import static uaa.methodologyquiz.datagen.MethodologyGenerator.generateAllMethodologies;
-import static uaa.methodologyquiz.datagen.MethodologyGenerator.generateMethodologies;
 import static uaa.methodologyquiz.datagen.QuestionGenerator.generateAllQuestions;
 
 /**
@@ -43,32 +42,22 @@ public enum FxmlEnum {
     }
     
     private FXMLLoader loader(URL fileLocation) {
-        ArrayList<Question> questions = generateAllQuestions();
-        // ArrayList<Methodology> methodologies = generateAllMethodologies();
-        ArrayList<MethodologiesEnum> currentMethodologies = new ArrayList<MethodologiesEnum>() {
-            {
-                add(MethodologiesEnum.AM);
-                add(MethodologiesEnum.ASD);
-                add(MethodologiesEnum.AUP);
-                add(MethodologiesEnum.CAF);
-                add(MethodologiesEnum.DAD);
-                add(MethodologiesEnum.ESP);
-                add(MethodologiesEnum.XP);
-                add(MethodologiesEnum.ZAVE);
-            }
-        };
-        ArrayList<Methodology> methodologies = generateMethodologies(currentMethodologies);
         FXMLLoader loader = new FXMLLoader(fileLocation);
-        
         Map<Class, Callable<?>> initializer = new HashMap<Class, Callable<?>>(){
             {
                 put(
                     QuizController.class, 
-                    () -> new QuizController(questions, methodologies)
+                    () -> new QuizController(
+                        generateAllQuestions(), 
+                        // generateAllMethodologies()
+                        MainApp.MethodologiesToShow
+                    )
                 );
                 put(
                     MethodologiesController.class, 
-                    () -> new MethodologiesController(methodologies)
+                    () -> new MethodologiesController(
+                        MainApp.MethodologiesToShow
+                    )
                 );
             }
         };
