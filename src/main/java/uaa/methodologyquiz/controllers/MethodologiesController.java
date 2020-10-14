@@ -11,7 +11,6 @@ import javafx.scene.layout.Region;
 import uaa.methodologyquiz.MainApp;
 import uaa.methodologyquiz.classes.*;
 import uaa.methodologyquiz.enums.*;
-import uaa.methodologyquiz.functions.MethodologiesFunctions;
 
 /**
  * FXML Controller class
