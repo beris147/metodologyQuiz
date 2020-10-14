@@ -3,6 +3,8 @@ package uaa.methodologyquiz.controllers;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.control.*;
@@ -29,6 +31,7 @@ public class QuizController implements Initializable {
     private int questionNumber;
     private final ArrayList<Question> questions;
     private final ArrayList<Methodology> methodologies;
+    private final HashMap<MethodologiesEnum, Integer> answersMap;
     
     public QuizController(
         ArrayList<Question> questions,
@@ -36,6 +39,8 @@ public class QuizController implements Initializable {
     ) {
         this.questions = questions;
         this.methodologies = methodologies;
+        this.answersMap = new HashMap<>();
+        this.questionNumber = 0;
     }
     
     /**
@@ -56,6 +61,66 @@ public class QuizController implements Initializable {
             questionButtonsBox.getChildren().add(questionButton);
         }
         this.setQuestion(0);
+    }
+    
+    private void updatePoints() {
+        this.answersMap.clear();
+        this.questions
+            .stream()
+            .filter((Question question) -> question.getAnswer() != null)
+            .forEach(
+                (Question question) -> {
+                    question
+                        .getAnswer()
+                        .getMethodologies()
+                        .stream()
+                        .map((Methodology methodology) -> methodology.getCode())
+                        .forEach(
+                            (MethodologiesEnum code) -> {
+                                this.answersMap.put(
+                                    code,
+                                    this.answersMap.getOrDefault(code, 0) + 1
+                                );
+                            }
+                        );
+                }
+            );
+    }
+    
+    private void updateMethodologiesList() {
+        this.listViewMethodologies.getItems().clear();
+        sortMap(this.answersMap)
+            .keySet()
+            .stream()
+            .sorted(Comparator.naturalOrder())
+            .forEachOrdered(
+                (MethodologiesEnum methodologyCode) -> {
+                    this.listViewMethodologies
+                        .getItems()
+                        .add(
+                            methodologyCode 
+                            + " Total: " 
+                            + this.answersMap.get(methodologyCode)
+                        );
+                }
+            );
+    }
+    
+    private static LinkedHashMap<MethodologiesEnum, Integer> sortMap(
+        HashMap<MethodologiesEnum, Integer> answersMap
+    ){
+        return answersMap
+            .entrySet()
+            .stream()
+            .sorted(Entry.comparingByValue(Comparator.reverseOrder()))
+            .collect(
+                Collectors.toMap(
+                    (Entry<MethodologiesEnum, Integer> entry) -> entry.getKey(), 
+                    (Entry<MethodologiesEnum, Integer> entry) -> entry.getValue(),
+                    (Integer e1, Integer e2) -> e1, 
+                    LinkedHashMap::new
+                )
+            );
     }
     
     private void onActionSetQuestion(Button button, int questionNum) {
@@ -87,7 +152,11 @@ public class QuizController implements Initializable {
                         radioOption.setSelected(true);
                     }
                     radioOption.setOnAction(
-                        (ActionEvent e) -> currentQuestion.setAnswer(option)
+                        (ActionEvent e) -> { 
+                            currentQuestion.setAnswer(option);
+                            this.updatePoints();
+                            this.updateMethodologiesList();
+                        }
                     );
                     this.optionsBox.getChildren().add(radioOption);
                 }

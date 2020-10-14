@@ -1,5 +1,8 @@
 package uaa.methodologyquiz.enums;
 
+import uaa.methodologyquiz.classes.Methodology;
+import static uaa.methodologyquiz.datagen.MethodologyGenerator.generateMethodology;
+
 /**
  *
  * @author root
@@ -44,4 +47,8 @@ public enum MethodologiesEnum {
     TDP,
     XP,
     ZAVE;
+    
+    public Methodology methodology() {
+        return generateMethodology(this);
+    }
 }
