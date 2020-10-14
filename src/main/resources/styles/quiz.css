@@ -3,6 +3,12 @@
 }
 
 .question-button {
-    -fx-font-size: 12px;
+    -fx-font-size: 16px;
     -fx-pref-width: 200px;
+     -fx-background-color:  #f45d49;
+    -fx-background-radius: 50;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+   
 }
+

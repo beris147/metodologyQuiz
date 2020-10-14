@@ -41,6 +41,7 @@ public class Methodology {
             json.getJSONArray("usages"), 
             "sentence"
         );
+        System.out.println(code);
         this.code = code;
     }
     

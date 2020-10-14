@@ -5,3 +5,20 @@
 .mainFxmlClass {
 
 }
+
+
+
+.fruit-item{
+    -fx-background-color: #FFFFFF;
+        -fx-background-radius: 30;
+}
+
+
+.my-special-button {
+    -fx-pref-height: 220px;
+    -fx-pref-width: 220px;
+    -fx-background-color:  #2382e5;
+    -fx-background-radius: 50;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+}

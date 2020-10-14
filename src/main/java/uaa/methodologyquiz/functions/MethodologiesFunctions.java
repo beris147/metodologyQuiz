@@ -15,6 +15,7 @@ public class MethodologiesFunctions {
         ObservableList<String> list = FXCollections.observableArrayList();
         methodologies.forEach((Methodology method) -> {
             list.add(method.getName());
+            
         });
         return list;
     }
