@@ -2,11 +2,13 @@
 
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uaa.methodologyquiz.controllers.MethodologiesController">
     <stylesheets>
@@ -32,5 +34,10 @@
             </ScrollPane>
          </children>
       </HBox>
+      <Button layoutX="18.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToIndex" styleClass="btn-color" text="Regresar" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
