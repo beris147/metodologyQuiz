@@ -4,15 +4,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 import java.util.Map.Entry;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.logging.*;
 import java.util.stream.Collectors;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
+import javafx.scene.chart.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import uaa.methodologyquiz.MainApp;
@@ -64,6 +60,7 @@ public class QuizController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         this.btnFinishQuiz.setDisable(true);
+        this.optionsBox.setSpacing(10);
         this.listViewMethodologies.setItems(
             MethodologiesFunctions.getMethodologiesNames(this.methodologies)
         );

@@ -5,12 +5,12 @@
 .text-area {
     -fx-font-family: Consolas;
     -fx-font-size: 15;
-    -fx-text-fill: #ffffff;
+    -fx-text-fill: white;
     -fx-display-caret:true;
 }
 
 .text-area .content {
-    -fx-background-color: #000000;
+    -fx-background-color: #010B13;
 }
 
 .tab-pane .tab-header-area .tab-header-background {

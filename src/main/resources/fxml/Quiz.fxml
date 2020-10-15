@@ -18,7 +18,10 @@
       <Button layoutX="174.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToIndex" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: #DBD053;" text="Inicio" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="16.0">
          <font>
             <Font name="System Bold" size="15.0" />
-         </font></Button>
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <AnchorPane layoutX="150.0" layoutY="55.0" prefHeight="383.0" prefWidth="586.0" style="-fx-background-color: #F5E6E8;" AnchorPane.bottomAnchor="153.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="64.0">
          <children>
             <Button id="JFXButton" fx:id="btnNextQuestion" layoutX="105.0" layoutY="415.0" mnemonicParsing="false" onAction="#nextQuestion" styleClass="btn-color" text="Siguiente" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="128.0">
