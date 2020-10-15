@@ -12,3 +12,25 @@
 .text-area .content {
     -fx-background-color: #000000;
 }
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #010B13;
+}
+
+.tab {
+  -fx-font-size: 18;
+  -fx-background-color: #247BA0;
+}
+
+.tab-label {
+    -fx-text-fill: #F5E6E8;
+}
+
+.tab:selected .tab-label {
+    -fx-text-fill: white ;
+} 
+
+.tab:selected {
+    -fx-background-color: #247BA0;
+    -fx-font-size: 22;
+}
