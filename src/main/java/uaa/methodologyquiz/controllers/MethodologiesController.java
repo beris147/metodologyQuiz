@@ -3,6 +3,9 @@ package uaa.methodologyquiz.controllers;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -11,6 +14,7 @@ import javafx.scene.layout.Region;
 import uaa.methodologyquiz.MainApp;
 import uaa.methodologyquiz.classes.*;
 import uaa.methodologyquiz.enums.*;
+import static uaa.methodologyquiz.functions.MethodologiesFunctions.openMethodologyInfoDialog;
 
 /**
  * FXML Controller class
@@ -46,31 +50,37 @@ public class MethodologiesController implements Initializable {
     }
 
     private void setArrayMethodologies() {
-        int column = 0;
-        int row = 1;
-
-        for (int i = 0; i < this.methodologies.size(); i++) {
-
-            Button questionButton = new Button("Metodologia "
-                    + this.methodologies.get(i).getName());
-
-            questionButton.getStyleClass().add("my-special-button");
+        for (
+            int i = 0, column = 0, row = 1;
+            i < this.methodologies.size();
+            i++, column++
+        ) {
             if (column == 3) {
                 column = 0;
                 row++;
             }
-
-            gridPane.add(questionButton, column++, row); //(child,column,row)
-            //set grid width
+            Methodology methodology = this.methodologies.get(i);
+            Button questionButton = new Button(methodology.getName());
+            questionButton.setOnAction(
+                (ActionEvent e) -> {
+                    try {
+                        openMethodologyInfoDialog(methodology);
+                    } catch (IOException ex) {
+                        Logger.getLogger(
+                            MethodologiesController.class.getName()
+                        ).log(Level.SEVERE, null, ex);
+                    }
+                }
+            );
+            questionButton.getStyleClass().add("my-special-button");
+            gridPane.add(questionButton, column, row);
             gridPane.setMinWidth(Region.USE_COMPUTED_SIZE);
             gridPane.setPrefWidth(Region.USE_COMPUTED_SIZE);
             gridPane.setMaxWidth(Region.USE_PREF_SIZE);
-
-            //set grid height
             gridPane.setMinHeight(Region.USE_COMPUTED_SIZE);
             gridPane.setPrefHeight(Region.USE_COMPUTED_SIZE);
             gridPane.setMaxHeight(Region.USE_PREF_SIZE);
-            gridPane.setMargin(questionButton, new Insets(10));
+            GridPane.setMargin(questionButton, new Insets(10));
         }
     }
 }

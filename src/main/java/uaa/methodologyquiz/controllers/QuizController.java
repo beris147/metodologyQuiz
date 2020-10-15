@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 import java.util.Map.Entry;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
@@ -18,6 +20,7 @@ import uaa.methodologyquiz.classes.*;
 import uaa.methodologyquiz.classes.Dialog;
 import uaa.methodologyquiz.enums.*;
 import uaa.methodologyquiz.functions.*;
+import static uaa.methodologyquiz.functions.MethodologiesFunctions.openMethodologyInfoDialog;
 
 /**
  * FXML Controller class
@@ -74,7 +77,7 @@ public class QuizController implements Initializable {
         }
         this.setQuestion(0);
     }
-    
+      
     private static XYChart.Series getDataSeriesForMap (
         HashMap<MethodologiesEnum, Integer> map,
         int skip,
@@ -164,11 +167,7 @@ public class QuizController implements Initializable {
                 (MethodologiesEnum methodologyCode) -> {
                     this.listViewMethodologies
                         .getItems()
-                        .add(
-                            methodologyCode 
-                            + " Total: " 
-                            + this.answersMap.get(methodologyCode)
-                        );
+                        .add(methodologyCode.name());
                 }
             );
     }
@@ -243,6 +242,24 @@ public class QuizController implements Initializable {
     private void changeButtonStyleClass(Button button) {
         button.getStyleClass().remove("unanswered-question");
         button.getStyleClass().add("answered-question");
+    }
+    
+    @FXML
+    private void openMethodologyInfo() {
+        String methodologyCodeString = this.listViewMethodologies
+                .getSelectionModel()
+                .getSelectedItem();
+        try {
+            openMethodologyInfoDialog(
+                MethodologiesEnum
+                    .valueOf(methodologyCodeString)
+                    .methodology()
+            );
+        } catch (IOException ex) {
+            Logger.getLogger(
+                QuizController.class.getName()
+            ).log(Level.SEVERE, null, ex);
+        }
     }
     
     @FXML

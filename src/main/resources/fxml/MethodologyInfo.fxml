@@ -15,7 +15,7 @@
     </stylesheets>
    <children>
       <Button layoutX="282.0" layoutY="351.0" mnemonicParsing="false" onAction="#closeWindow" text="Ok" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="256.0" AnchorPane.rightAnchor="256.0" />
-      <Label alignment="CENTER" layoutX="19.0" layoutY="6.0" prefHeight="16.0" prefWidth="568.0" text="Nombre" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0">
+      <Label fx:id="nameLabel" alignment="CENTER" layoutX="19.0" layoutY="6.0" prefHeight="16.0" prefWidth="568.0" text="Nombre" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="8.0">
          <font>
             <Font size="18.0" />
          </font>

@@ -19,6 +19,8 @@ import uaa.methodologyquiz.classes.Methodology;
 public class MethodologyInfoController implements Initializable {
     
     @FXML
+    private Label nameLabel;
+    @FXML
     private TextArea 
         descriptionText, 
         featuresText, 
@@ -44,6 +46,7 @@ public class MethodologyInfoController implements Initializable {
         setListToTextArea(this.methodology.getDisadvantages(), this.disadvantagesText);
         setListToTextArea(this.methodology.getFeatures(), this.featuresText);
         setListToTextArea(this.methodology.getUsages(), this.usagesText);
+        this.nameLabel.setText(this.methodology.getName());
     }
     
     private static void setListToTextArea(
