@@ -1,31 +1,51 @@
-/*
- * Empty Stylesheet file.
- */
-
 .mainFxmlClass {
-
+    -fx-background-color: #02182B;
 }
 
-.fruit-item{
-    -fx-background-color: #FFFFFF;
-    -fx-background-radius: 30;
+.grid{
+    -fx-background-color: #247BA0;
 }
 
-.my-special-button {
+.transparent {
+    -fx-background-color: #02182B;
+}
+
+.methodologies-button {
     -fx-pref-height: 220px;
     -fx-pref-width: 220px;
-    -fx-background-color:  #2382e5;
+    -fx-background-color:  #247BA0;
     -fx-background-radius: 50;
     -fx-background-insets: 0;
-    -fx-text-fill: white;
+    -fx-text-fill: #F5E6E8;
+    -fx-font-size: 18;
     -fx-cursor: hand;
 }
 
-.btn-color
-{
-    -fx-background-color:  #f45d49;
+.btn-color {
+    -fx-background-color:  #FC5130;
     -fx-background-radius: 50;
     -fx-background-insets: 0;
-    -fx-text-fill: white;
+    -fx-text-fill: #F5E6E8;
     -fx-font-size: 16px
+}
+
+scroll-pane {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-pane:focused {
+    -fx-background-insets: 0;
+}
+
+.scroll-pane .corner {
+    -fx-background-insets: 0;
+}
+
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+
+.scroll-pane {
+   -fx-background-color: transparent;
 }

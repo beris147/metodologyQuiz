@@ -8,9 +8,9 @@ import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Region;
+import javafx.geometry.Pos;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
 import uaa.methodologyquiz.MainApp;
 import uaa.methodologyquiz.classes.*;
 import uaa.methodologyquiz.enums.*;
@@ -30,14 +30,15 @@ public class MethodologiesController implements Initializable {
      * @param rb
      */
     @FXML
-    private GridPane gridPane;
+    private VBox methodologiesBox;
+    @FXML
+    private ScrollPane scrollPane;
 
     private final ArrayList<Methodology> methodologies;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        setArrayMethodologies();
-
+        this.setArrayMethodologies();
     }
 
     public MethodologiesController(ArrayList<Methodology> methodologies) {
@@ -48,16 +49,14 @@ public class MethodologiesController implements Initializable {
     private void backToIndex() throws IOException {
         MainApp.changeScene(FxmlEnum.INDEX);
     }
-
+    
     private void setArrayMethodologies() {
-        for (
-            int i = 0, column = 0, row = 1;
-            i < this.methodologies.size();
-            i++, column++
-        ) {
-            if (column == 3) {
-                column = 0;
-                row++;
+        HBox rowBox = new HBox();
+        this.scrollPane.setFitToWidth(true);
+        for(int i=0, col=0; i<this.methodologies.size(); i++, col++) {
+            if (col == 3) {
+                col = 0;
+                addRowToVBox(this.methodologiesBox, rowBox);
             }
             Methodology methodology = this.methodologies.get(i);
             Button questionButton = new Button(methodology.getName());
@@ -72,15 +71,22 @@ public class MethodologiesController implements Initializable {
                     }
                 }
             );
-            questionButton.getStyleClass().add("my-special-button");
-            gridPane.add(questionButton, column, row);
-            gridPane.setMinWidth(Region.USE_COMPUTED_SIZE);
-            gridPane.setPrefWidth(Region.USE_COMPUTED_SIZE);
-            gridPane.setMaxWidth(Region.USE_PREF_SIZE);
-            gridPane.setMinHeight(Region.USE_COMPUTED_SIZE);
-            gridPane.setPrefHeight(Region.USE_COMPUTED_SIZE);
-            gridPane.setMaxHeight(Region.USE_PREF_SIZE);
-            GridPane.setMargin(questionButton, new Insets(10));
+            questionButton.getStyleClass().add("methodologies-button");
+            questionButton.wrapTextProperty().setValue(true);
+            HBox.setMargin(questionButton, new Insets(10));
+            rowBox.getChildren().add(questionButton);
         }
+        if (!rowBox.getChildren().isEmpty()) {
+            addRowToVBox(this.methodologiesBox, rowBox);
+        }
+    }
+    
+    private static void addRowToVBox(VBox box, HBox row) {
+        HBox auxBox = new HBox();
+        auxBox.setAlignment(Pos.CENTER);
+        auxBox.setMinHeight(200);
+        auxBox.getChildren().addAll(row.getChildren());
+        box.getChildren().add(auxBox);
+        row.getChildren().clear();
     }
 }
