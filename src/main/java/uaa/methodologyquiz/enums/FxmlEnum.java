@@ -18,6 +18,7 @@ import static uaa.methodologyquiz.datagen.QuestionGenerator.generateAllQuestions
 public enum FxmlEnum {
     INDEX("Index"),
     METHODOLOGIES("Methodologies"),
+    METHODOLOGYINFO("MethodologyInfo"),
     QUIZ("Quiz");
 
     private final String name;
@@ -41,8 +42,8 @@ public enum FxmlEnum {
         return fileLocation; 
     }
     
-    private FXMLLoader loader(URL fileLocation) {
-        FXMLLoader loader = new FXMLLoader(fileLocation);
+    private FXMLLoader loader() {
+        FXMLLoader loader = new FXMLLoader(this.location());
         Map<Class, Callable<?>> initializer = new HashMap<Class, Callable<?>>(){
             {
                 put(
@@ -76,11 +77,23 @@ public enum FxmlEnum {
         });
         return loader;
     }
+    
+    private FXMLLoader loader(Object controller) {
+        FXMLLoader loader = new FXMLLoader(this.location());
+        loader.setController(controller);
+        return loader;
+    }
 
     public Parent root() throws IOException {
-        URL fileLocation = this.location();
-        FXMLLoader loader = this.loader(fileLocation);
+        FXMLLoader loader = this.loader();
         Parent root = loader.load();
         return root;
     }
+    
+    public Parent root(Object controller) throws IOException {
+        FXMLLoader loader = this.loader(controller);
+        Parent root = loader.load();
+        return root;
+    }
+    
 }

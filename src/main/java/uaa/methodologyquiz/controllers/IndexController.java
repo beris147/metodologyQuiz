@@ -2,14 +2,11 @@ package uaa.methodologyquiz.controllers;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import java.util.*;
+import javafx.fxml.*;
 import uaa.methodologyquiz.MainApp;
 import static uaa.methodologyquiz.datagen.MethodologyGenerator.generateMethodologies;
-import uaa.methodologyquiz.enums.FxmlEnum;
-import uaa.methodologyquiz.enums.MethodologiesEnum;
+import uaa.methodologyquiz.enums.*;
 
 /**
  * FXML Controller class
@@ -54,6 +51,4 @@ public class IndexController implements Initializable {
     private void seeMethodologies() throws IOException {
         MainApp.changeScene(FxmlEnum.METHODOLOGIES);
     }
-    
-    
 }
