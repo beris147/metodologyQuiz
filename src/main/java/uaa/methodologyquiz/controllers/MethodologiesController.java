@@ -51,7 +51,7 @@ public class MethodologiesController implements Initializable {
 
         for (int i = 0; i < this.methodologies.size(); i++) {
 
-            Button questionButton = new Button("Metodologia"
+            Button questionButton = new Button("Metodologia "
                     + this.methodologies.get(i).getName());
 
             questionButton.getStyleClass().add("my-special-button");
@@ -70,7 +70,6 @@ public class MethodologiesController implements Initializable {
             gridPane.setMinHeight(Region.USE_COMPUTED_SIZE);
             gridPane.setPrefHeight(Region.USE_COMPUTED_SIZE);
             gridPane.setMaxHeight(Region.USE_PREF_SIZE);
-
             gridPane.setMargin(questionButton, new Insets(10));
         }
     }

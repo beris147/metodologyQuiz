@@ -16,7 +16,7 @@
         <URL value="@/styles/quiz.css" />
     </stylesheets>
    <children>
-      <VBox fx:id="questionButtonsBox" layoutX="8.0" layoutY="29.0" prefHeight="568.0" prefWidth="124.0" style="-fx-background-color: blue;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="29.0" />
+      <VBox fx:id="questionButtonsBox" layoutX="8.0" layoutY="-3.0" prefHeight="600.0" prefWidth="124.0" style="-fx-background-color: blue;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Pane layoutX="188.0" layoutY="25.0" prefHeight="382.0" prefWidth="442.0" style="-fx-border-color: black;" AnchorPane.leftAnchor="188.0" AnchorPane.rightAnchor="170.0" AnchorPane.topAnchor="25.0">
          <children>
             <Button id="JFXButton" fx:id="btnNextQuestion" layoutX="112.0" layoutY="325.0" mnemonicParsing="false" onAction="#nextQuestion" styleClass="btn-color" text="Siguiente" />
@@ -47,10 +47,10 @@
                   </AnchorPane>
               </content>
             </ScrollPane>
-            <Button fx:id="btnFinishQuiz" layoutX="347.0" layoutY="325.0" mnemonicParsing="false" onAction="#showTopMethodologies" text="Terminar" />
+            <Button fx:id="btnFinishQuiz" layoutX="347.0" layoutY="325.0" mnemonicParsing="false" onAction="#showTopMethodologies" style="-fx-background-color: #2be36b;" styleClass="btn-color" text="Terminar" />
          </children>
       </Pane>
       <ListView fx:id="listViewMethodologies" layoutX="612.0" layoutY="14.0" prefHeight="394.0" prefWidth="135.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="14.0" />
-      <Button layoutX="3.0" layoutY="1.0" mnemonicParsing="false" onAction="#backToIndex" prefHeight="26.0" prefWidth="116.0" text="Regresar" />
+      <Button layoutX="364.0" layoutY="449.0" mnemonicParsing="false" onAction="#backToIndex" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: red;" styleClass="btn-color" text="Regresar" AnchorPane.leftAnchor="364.0" AnchorPane.rightAnchor="320.0" AnchorPane.topAnchor="449.0" />
    </children>
 </AnchorPane>
