@@ -6,20 +6,22 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uaa.methodologyquiz.controllers.QuizController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #247BA0;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uaa.methodologyquiz.controllers.QuizController">
     <stylesheets>
         <URL value="@/styles/quiz.css" />
     </stylesheets>
    <children>
-      <VBox fx:id="questionButtonsBox" layoutX="8.0" layoutY="-3.0" prefHeight="600.0" prefWidth="124.0" style="-fx-background-color: blue;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <Pane layoutX="174.0" layoutY="46.0" prefHeight="382.0" prefWidth="442.0" style="-fx-border-color: black;" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="256.0" AnchorPane.topAnchor="64.0">
+      <ListView fx:id="listViewMethodologies" layoutX="612.0" layoutY="14.0" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#openMethodologyInfo" orientation="HORIZONTAL" prefHeight="66.0" prefWidth="618.0" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="64.0" />
+      <Button layoutX="174.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToIndex" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: #DBD053;" text="Inicio" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="16.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <AnchorPane layoutX="150.0" layoutY="55.0" prefHeight="383.0" prefWidth="586.0" style="-fx-background-color: #F5E6E8;" AnchorPane.bottomAnchor="153.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="64.0">
          <children>
-            <Button id="JFXButton" fx:id="btnNextQuestion" layoutX="112.0" layoutY="325.0" mnemonicParsing="false" onAction="#nextQuestion" styleClass="btn-color" text="Siguiente" />
-            <Button fx:id="btnPrevQuestion" layoutX="40.0" layoutY="323.0" mnemonicParsing="false" onAction="#prevQuestion" style="-fx-background-color: #f45d49; -fx-background-radius: 50; -fx-background-insets: 0; -fx-text-fill: white;" styleClass="JFXButton" text="Atras">
+            <Button id="JFXButton" fx:id="btnNextQuestion" layoutX="105.0" layoutY="415.0" mnemonicParsing="false" onAction="#nextQuestion" styleClass="btn-color" text="Siguiente" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="128.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -27,21 +29,39 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Label fx:id="questionTitle" layoutX="22.0" layoutY="14.0" prefHeight="16.0" prefWidth="394.0" text="Title">
+            <Button fx:id="btnPrevQuestion" layoutX="30.0" layoutY="415.0" mnemonicParsing="false" onAction="#prevQuestion" styleClass="btn-color" text="Atras" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="32.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label fx:id="questionTitle" layoutX="30.0" layoutY="28.0" prefHeight="26.0" prefWidth="355.0" text="Title" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="32.0">
                <font>
                   <Font size="22.0" />
                </font>
             </Label>
-            <Label fx:id="questionSentence" layoutX="22.0" layoutY="52.0" prefHeight="16.0" prefWidth="394.0" text="Sentence">
+            <Label fx:id="questionSentence" layoutX="46.0" layoutY="41.0" prefHeight="21.0" prefWidth="343.0" text="Sentence" wrapText="true" AnchorPane.leftAnchor="64.0" AnchorPane.topAnchor="64.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="btnFinishQuiz" layoutX="302.0" layoutY="325.0" mnemonicParsing="false" onAction="#showTopMethodologies" style="-fx-background-color: #2be36b;" styleClass="btn-color" text="Terminar" />
-            <VBox fx:id="optionsBox" layoutX="15.0" layoutY="85.0" prefHeight="198.0" prefWidth="365.0" />
+            <Button fx:id="btnFinishQuiz" layoutX="321.0" layoutY="410.0" mnemonicParsing="false" onAction="#showTopMethodologies" prefWidth="97.0" style="-fx-background-color: #DBD053;" text="Terminar" AnchorPane.bottomAnchor="33.0" AnchorPane.rightAnchor="32.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <VBox fx:id="optionsBox" layoutX="70.0" layoutY="101.0" prefHeight="108.0" prefWidth="426.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="100.0" />
          </children>
-      </Pane>
-      <ListView fx:id="listViewMethodologies" layoutX="612.0" layoutY="14.0" onMouseClicked="#openMethodologyInfo" prefHeight="394.0" prefWidth="135.0" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="16.0" />
-      <Button layoutX="174.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToIndex" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: red;" styleClass="btn-color" text="Inicio" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="16.0" />
+      </AnchorPane>
+      <AnchorPane layoutX="-14.0" layoutY="-55.0" prefHeight="600.0" prefWidth="124.0" style="-fx-background-color: #02182B;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox fx:id="questionButtonsBox" alignment="TOP_CENTER" prefHeight="600.0" prefWidth="124.0" style="-fx-background-color: #02182B;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="64.0" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

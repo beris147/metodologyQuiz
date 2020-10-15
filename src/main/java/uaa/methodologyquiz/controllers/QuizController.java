@@ -68,7 +68,7 @@ public class QuizController implements Initializable {
             MethodologiesFunctions.getMethodologiesNames(this.methodologies)
         );
         for(int i=0;i<this.questions.size();i++) {
-            Button questionButton = new Button("Pregunta " + (i + 1));
+            Button questionButton = new Button(String.valueOf(i + 1));
             onActionSetQuestion(questionButton, i);
             questionButton
                 .getStyleClass()
@@ -249,6 +249,9 @@ public class QuizController implements Initializable {
         String methodologyCodeString = this.listViewMethodologies
                 .getSelectionModel()
                 .getSelectedItem();
+        if(methodologyCodeString == null) {
+            return;
+        }
         try {
             openMethodologyInfoDialog(
                 MethodologiesEnum
@@ -306,5 +309,5 @@ public class QuizController implements Initializable {
             this.setQuestion(++questionNumber);
         }
     } 
-    
+
 }

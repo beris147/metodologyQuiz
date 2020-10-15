@@ -4,10 +4,11 @@
 
 .question-button {
     -fx-font-size: 16px;
-    -fx-pref-width: 200px;
-    -fx-background-radius: 50;
-    -fx-background-insets: 0;
-    -fx-text-fill: white;
+    -fx-background-radius: 5em;
+    -fx-min-width: 60px;
+    -fx-min-height: 60px;
+    -fx-max-width: 60px;
+    -fx-max-height: 60px;
     -fx-padding: 10 5 10 5;
     -fx-border-insets: 5px;
     -fx-background-insets: 5px;
@@ -15,10 +16,27 @@
 }
 
 .unanswered-question {
-    -fx-background-color:  red;
+    -fx-background-color:  #FC5130;
+    -fx-text-fill: #F5E6E8;
 }
 
 .answered-question {
-    -fx-background-color:  #f45d49;
+    -fx-background-color: #DBD053;
+    -fx-text-fill: #02182B;
+}
+
+.list-cell { 
+    -fx-text-fill: black;
+}
+.list-cell:odd { 
+    -fx-background-color: white; 
+}
+.list-cell:even { 
+    -fx-background-color: white; 
+}
+.list-cell:filled:hover { 
+    -fx-background-color: #02182B;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
 }
 

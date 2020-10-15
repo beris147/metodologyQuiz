@@ -6,13 +6,10 @@
 
 }
 
-
-
 .fruit-item{
     -fx-background-color: #FFFFFF;
-        -fx-background-radius: 30;
+    -fx-background-radius: 30;
 }
-
 
 .my-special-button {
     -fx-pref-height: 220px;
@@ -24,10 +21,8 @@
     -fx-cursor: hand;
 }
 
-
 .btn-color
 {
- 
     -fx-background-color:  #f45d49;
     -fx-background-radius: 50;
     -fx-background-insets: 0;

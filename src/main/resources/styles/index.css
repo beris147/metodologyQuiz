@@ -1,16 +1,12 @@
-/*
- * Empty Stylesheet file.
- */
-
 .indexFxmlClass {
-  
-   -fx-background-image: url("../assets/background.jpg")
+    -fx-background-color: #02182B;
 }
+
 .btn-color
 {
-    -fx-background-color:  #f45d49;
+    -fx-background-color:  #FC5130;
     -fx-background-radius: 50;
     -fx-background-insets: 0;
-    -fx-text-fill: white;
+    -fx-text-fill: #F5E6E8;
     -fx-cursor: hand;
 }
