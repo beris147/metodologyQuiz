@@ -1,6 +1,7 @@
 package uaa.methodologyquiz.enums;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 /**
  *
@@ -31,8 +32,11 @@ public enum DataFilesEnum {
     }
     
     public BufferedReader fileReader() {
-        InputStream in = this.stream();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+        InputStreamReader inStreamReader = new InputStreamReader(
+            this.stream(), 
+            StandardCharsets.UTF_8
+        );
+        BufferedReader reader = new BufferedReader(inStreamReader);
         return reader;
     }
 }
